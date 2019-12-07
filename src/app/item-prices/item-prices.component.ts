@@ -11,19 +11,19 @@ export class ItemPricesComponent implements OnInit {
   chartRef: any = null
 
   g903Data = {
-    name: 'G903 Price, Amazon',
+    name: 'Logitech G903 Price, Amazon',
     id: '1',
     data: [150, 150, 150, 150, 150, 150, 142, 152, 142, 100, 142, 130, 130, 130, 130, 130, 130, 130, 140]
   } as any
 
   rtx2060Data = {
-    name: 'RTX 2060 Price, Amazon',
+    name: 'Nvidia RTX 2060 Price, Amazon',
     id: '2',
     data: [330, 330, 330, 330, 330, 330, 362, 362, 362, 362, 380, 378, 378, 365, 345, 330, 330, 330, 410, 360]
   } as any
 
   laptopData = {
-    name: 'Surface Book 2 Price, Amazon',
+    name: 'Microsoft Surface Book 2 Price, Amazon',
     id: '3',
     data: [936, 921, 921, 928, 916, 915, 912, 852, 912, 913, 992, 980, 985, 1000, 900, 898, 898, 891, 1096, 1000]
   }

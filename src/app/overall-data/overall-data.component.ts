@@ -75,6 +75,13 @@ export class OverallDataComponent {
           text: 'Year'
         }
       } as any,
+      plotOptions: {
+        series: {
+          marker: {
+            enabled: false
+          }
+        }
+      },
       series: [this.blackFridayData, this.cyberMondayData]
     })
     this.chart.ref$.subscribe(x => this.chartRef = x)
@@ -102,7 +109,19 @@ export class OverallDataComponent {
       } as any,
       plotOptions: {
         areaspline: {
-          negativeColor: '#ff0000'
+          negativeFillColor: '#ff0000'
+        },
+        series: {
+          marker: {
+            enabled: false
+          }
+        }
+      },
+      tooltip: {
+        // headerFormat: '<span style="color:{point.color}">\u25CF</span> Average {series.name} Discount: ',
+        pointFormat: '<b>{point.y}%</b><br/>',
+        formatter: function() {
+          return '<span style="color:' + (this.series as any).color + '">\u25CF</span> ' + this.series.name + ' ' + this.x + '<br/>' + '<b>' + this.y.toFixed(1) + '%</b><br/>'
         }
       },
       series: [this.blackFridayChange, this.cyberMondayChange]
