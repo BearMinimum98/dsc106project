@@ -1,0 +1,33 @@
+<div class='container'>
+  <mat-card class='item-chart'>
+    <mat-card-header>
+      <mat-card-title>Some (Tech) Examples</mat-card-title>
+      <mat-card-subtitle>Let's look at some popular electronics items</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div [chart]="chart"></div>
+      <p class='explanation'>
+        By examining a few products from a popular category to go on sale (electronics), we can determine whether or not Black Friday deals are truly deals.
+      </p>
+      <p>
+        As it turns out, not really. The lowest prices happen not during Black Friday, but actually about 1-2 months before Black Friday. Of course, some items may be exceptions to this trend, but generally the more popular items go on deeper sales during times other than Black Friday.
+      </p>
+      <p>
+        However, this is just one category. What if we look across categories, such as at luxury goods, toys, or appliances?
+        <span class='note'>
+          * Data taken from CamelCamelCamel, using pixel positioning for prices/dates
+        </span>
+      </p>
+    </mat-card-content>
+    <mat-card-actions class='padded'>
+      <mat-form-field>
+        <mat-label>View an item</mat-label>
+        <mat-select (selectionChange)="updateItem()" [(ngModel)]="selected">
+          <mat-option *ngFor="let pricing of availableItems; let i of index" [value]="i">
+            {{pricing.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-actions>
+  </mat-card>
+</div>

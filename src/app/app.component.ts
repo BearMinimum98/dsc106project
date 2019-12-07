@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'project';
+  title = 'project'
+
+  constructor() {}
+
+  scrollToTimeline(): void {
+    document.querySelector('#timeline').scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
+  }
 }
